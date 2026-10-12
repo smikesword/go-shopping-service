@@ -1,0 +1,16 @@
+services:
+  jaeger:
+    image: jaegertracing/jaeger:latest
+    ports:
+      - 4317:4317
+      - 4318:4318
+      - 16686:16686
+  
+  api:
+    depends_on: [jaeger]
+    image: go-api:latest
+    ports:
+      - 8888:8888
+    environment:
+      - OTEL_EXPORTER_OTLP_ENDPOINT=http://jaeger:4318
+      - OTEL_SERVICE_NAME=myapp
