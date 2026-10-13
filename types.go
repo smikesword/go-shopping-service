@@ -12,14 +12,14 @@ type Session struct {
 }
 
 type User struct {
-	ID int `json: "id"`
-  	Role Role `json: "role"`
+	ID int `json:"id"`
+  	Role Role `json:"role"`
 	Username string
 	Password string
 }
 
 type UserDTO struct {
-	Role Role `json: "role"`
+	Role Role `json:"role"`
 	Username string
 }
 
