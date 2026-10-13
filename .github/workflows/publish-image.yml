@@ -39,7 +39,7 @@ jobs:
         needs: [test]
         permissions:
             security-events: write
-
+            packages: write
         steps:
             - name: Checkout code
               uses: actions/checkout@v4
