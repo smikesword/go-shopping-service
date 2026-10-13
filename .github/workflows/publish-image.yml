@@ -11,7 +11,7 @@ jobs:
         name: runs tests and SAST scan with Trivy
         runs-on: ubuntu-latest
         permissions:
-            security-events: read
+            security-events: write
         
         steps:
             - uses: actions/checkout@v4
